@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow • Smart Task Dashboard</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ================= LOGIN PAGE ================= -->
+  <section id="loginPage" class="login-page">
+
+    <!-- Glow Background -->
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+
+    <!-- Login Card -->
+    <div class="login-card">
+
+      <!-- Brand -->
+      <div class="brand">
+        <div class="logo">✓</div>
+        <h2>TaskFlow</h2>
+      </div>
+
+      <!-- Heading -->
+      <h1>Welcome Back</h1>
+      <p class="subtitle">Plan smart. Work fast. Stay focused.</p>
+
+      <!-- Avatar Preview -->
+      <div class="avatar-preview" id="avatarPreview">You</div>
+
+      <!-- Floating Input -->
+      <div class="input-group">
+        <input type="text" id="usernameInput" required />
+        <label>Your Name</label>
+      </div>
+
+      <!-- Login Button -->
+      <button id="loginBtn" class="login-btn">
+        <span class="btn-text">Enter Dashboard</span>
+        <span class="btn-loader"></span>
+      </button>
+
+      <!-- Divider -->
+      <div class="divider"><span>secure local session</span></div>
+
+      <!-- Footer -->
+      <p class="footer-text">
+        Built for productivity ⚡
+        <strong>Minimal • Fast • Private</strong>
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ================= DASHBOARD ================= -->
+  <div id="dashboardPage" class="dashboard hidden">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <!-- Profile -->
+      <div class="profile">
+        <img src="https://i.pravatar.cc/100" alt="User profile" />
+        <h3 id="sidebarName">User Name</h3>
+        <p id="sidebarEmail">user@email.com</p>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="menu">
+        <ul>
+          <li class="active">Dashboard</li>
+          <li>Vital Tasks</li>
+          <li>My Tasks</li>
+          <li>Categories</li>
+          <li>Settings</li>
+          <li>Help</li>
+        </ul>
+      </nav>
+
+      <!-- Logout -->
+      <button id="logoutBtn" class="logout">Logout</button>
+
+    </aside>
+
+
+    <!-- Main Area -->
+    <main class="main">
+
+      <!-- ================= TOP BAR ================= -->
+      <header class="topbar">
+
+        <div class="topbar-left">
+          <h1 class="page-title">Dashboard</h1>
+        </div>
+
+        <div class="topbar-right">
+
+          <!-- Search -->
+          <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Search tasks..." />
+          </div>
+
+          <!-- Icons -->
+          <div class="icons">
+            <button class="icon" title="Notifications">🔔</button>
+            <button class="icon" title="Calendar">🗓️</button>
+          </div>
+
+          <!-- Date -->
+          <div class="date">
+            <strong id="dayName">Monday</strong>
+            <p id="fullDate">1 January 2026</p>
+          </div>
+
+        </div>
+      </header>
+
+
+      <!-- ================= WELCOME ================= -->
+      <section class="welcome">
+        <h2>Welcome back, <span id="welcomeName">User</span> 👋</h2>
+
+        <div class="team">
+          <img src="https://i.pravatar.cc/32?img=1" alt="member" />
+          <img src="https://i.pravatar.cc/32?img=2" alt="member" />
+          <img src="https://i.pravatar.cc/32?img=3" alt="member" />
+          <img src="https://i.pravatar.cc/32?img=4" alt="member" />
+          <button class="invite-btn">Invite</button>
+        </div>
+      </section>
+
+
+      <!-- ================= DASHBOARD GRID ================= -->
+      <section class="content">
+
+        <!-- ===== To‑Do Card ===== -->
+        <div class="card todo-card">
+          <div class="card-header">
+            <h3>To‑Do Tasks</h3>
+            <button id="addTaskBtn" class="primary-btn">+ Add Task</button>
+          </div>
+
+          <!-- Task Input Row -->
+          <div class="task-input">
+            <input id="taskInput" type="text" placeholder="Write a new task..." />
+            <button id="saveTaskBtn">Add</button>
+          </div>
+
+          <!-- Task List -->
+          <ul id="taskList" class="task-list"></ul>
+        </div>
+
+
+        <!-- ===== Status Card ===== -->
+        <div class="card status-card">
+          <h3>Task Status</h3>
+
+          <div class="status">
+            <div class="status-item">
+              <span>Completed</span>
+              <strong id="completedCount">0%</strong>
+            </div>
+
+            <div class="status-item">
+              <span>In Progress</span>
+              <strong id="progressCount">0%</strong>
+            </div>
+
+            <div class="status-item">
+              <span>Not Started</span>
+              <strong id="pendingCount">0%</strong>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ===== Completed Card ===== -->
+        <div class="card completed-card">
+          <h3>Completed Tasks</h3>
+          <ul id="completedList" class="task-list completed"></ul>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
